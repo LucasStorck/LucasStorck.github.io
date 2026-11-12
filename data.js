@@ -1,7 +1,7 @@
 /* =====================================================
    EDITE AQUI: todo o conteúdo do portfólio vive neste arquivo.
    Baseado no currículo de Lucas Storck Mendes.
-   Itens marcados com TODO precisam do seu dado real.
+   Projetos: só os repositórios públicos do GitHub.
    ===================================================== */
 window.PORTFOLIO = {
   perfil: {
@@ -54,55 +54,10 @@ window.PORTFOLIO = {
 
   projetos: [
     {
-      id: "kadija",
-      titulo: "Projeto Kadija",
-      ano: "Destaque",
-      categoria: "Destaque",
-      emoji: "🛠️",
-      resumo: "Sistema de gerenciamento de ordens de serviço.",
-      problema: "Ordens de serviço precisam ser abertas, acompanhadas e concluídas com clareza, sem perder o histórico.",
-      solucao: "Atuei na estruturação e no gerenciamento da base de código do sistema, organizando o projeto para evoluir com segurança.",
-      stack: ["Java", "Spring Boot", "PostgreSQL"],            // TODO: confirme a stack
-      arquitetura: ["Cliente", "API REST", "Regras de negócio", "Banco de dados"],
-      destaques: ["Estruturação da base de código", "Gerenciamento e organização do repositório", "Foco em ordens de serviço"],
-      fatos: [ { rotulo: "Domínio", valor: "Ordens de serviço" }, { rotulo: "Meu papel", valor: "Estruturação e gestão do código" } ],
-      repo: null                                                // TODO: nome do repositório, se for público
-    },
-    {
-      id: "observarnit",
-      titulo: "ObservarNit",
-      ano: "Destaque",
-      categoria: "Destaque",
-      emoji: "🏙️",
-      resumo: "Software voltado ao ecossistema municipal de Niterói.",
-      problema: "Uma base de código pública precisa continuar saudável e rastreável ao longo do tempo.",
-      solucao: "Cuidei da manutenção, do arquivamento e do versionamento do código, mantendo o histórico organizado e recuperável.",
-      stack: ["Java", "Git"],                                   // TODO: confirme a stack
-      arquitetura: ["Código-fonte", "Versionamento", "Manutenção", "Arquivamento"],
-      destaques: ["Manutenção contínua", "Versionamento organizado", "Arquivamento do projeto"],
-      fatos: [ { rotulo: "Contexto", valor: "Ecossistema municipal" }, { rotulo: "Meu papel", valor: "Manutenção e versionamento" } ],
-      repo: null
-    },
-    {
-      id: "prefeitura-api",
-      titulo: "APIs da Prefeitura de Niterói",
-      ano: "Experiência",
-      categoria: "Backend",
-      emoji: "🏛️",
-      resumo: "APIs RESTful corporativas para a administração pública municipal.",
-      problema: "Sistemas da administração pública precisam conversar entre si de forma confiável.",
-      solucao: "Projetei, desenvolvi e implementei APIs RESTful em Java com Spring Boot, otimizando a comunicação entre sistemas.",
-      stack: ["Java", "Spring Boot", "REST", "Swagger"],
-      arquitetura: ["Sistema cliente", "API REST", "Serviço Spring Boot", "Banco de dados"],
-      destaques: ["APIs RESTful robustas", "Serviços de backend corporativos", "Comunicação otimizada entre sistemas"],
-      fatos: [ { rotulo: "Onde", valor: "Prefeitura de Niterói" }, { rotulo: "Cargo", valor: "Desenvolvedor Backend" } ],
-      repo: null
-    },
-    {
       id: "lab-url",
       titulo: "URL Shortener",
       ano: 2026,
-      categoria: "Open source",
+      categoria: "Backend",
       emoji: "🔗",
       resumo: "Encurtador de URLs com métricas de cliques, cache em Redis e documentação Swagger.",
       problema: "Links longos são ruins de compartilhar e não dizem quantas pessoas clicaram.",
@@ -110,14 +65,14 @@ window.PORTFOLIO = {
       stack: ["Java 25", "Spring Boot 4", "PostgreSQL", "Liquibase", "Redis", "Testcontainers", "Docker Compose", "TypeScript"],
       arquitetura: ["Cliente", "POST /api/urls", "Cache Redis", "PostgreSQL", "Redirect 302 + clique"],
       destaques: ["Cache-aside com TTL limitado pela expiração do link", "Fallback para o banco quando o Redis está fora", "Validação de entrada: só URLs http(s) com host", "Testes de integração com Testcontainers"],
-      fatos: [ { rotulo: "Redirect", valor: "HTTP 302" }, { rotulo: "Expiração", valor: "1 a 3650 dias" }, { rotulo: "Docs", valor: "Swagger UI" }, { rotulo: "Licença", valor: "MIT" } ],
+      fatos: [ { rotulo: "Redirect", valor: "HTTP 302" }, { rotulo: "Expiração", valor: "1 a 3650 dias" }, { rotulo: "Docs", valor: "Swagger UI" } ],
       repo: "url-shortener"
     },
     {
       id: "lab-ecommerce",
       titulo: "E-commerce Microservices",
       ano: 2026,
-      categoria: "Open source",
+      categoria: "Backend",
       emoji: "🛒",
       resumo: "Backend de e-commerce em seis microsserviços com Spring Cloud, Kafka e bancos separados por serviço.",
       problema: "Entender na prática como as peças de uma arquitetura de microsserviços se encaixam.",
@@ -129,10 +84,25 @@ window.PORTFOLIO = {
       repo: "ecommerce-microservices"
     },
     {
+      id: "lab-summa",
+      titulo: "Summa",
+      ano: 2026,
+      categoria: "Em andamento",
+      emoji: "📰",
+      resumo: "Briefing diário de notícias que agrupa as matérias de vários veículos em um único acontecimento. Em desenvolvimento.",
+      problema: "O mesmo fato aparece em dez portais diferentes, e ler todos para entender o que aconteceu toma tempo.",
+      solucao: "Pipeline em etapas ligadas por estado no banco: coleta por RSS, normalização, agrupamento por acontecimento e resumo por IA. A primeira fase, de coleta e normalização, já está pronta, com URLs canônicas para deduplicar as matérias e registro de cada coleta.",
+      stack: ["TypeScript", "Node.js", "SQLite", "better-sqlite3", "rss-parser", "GitHub Actions"],
+      arquitetura: ["Feeds RSS", "Coleta", "Normalização", "Agrupamento", "Resumo por IA", "Briefing"],
+      destaques: ["Canonicalização de URL com testes, para deduplicar matérias", "Migrações próprias com registro em _migrations", "CI com build e testes em todo pull request", "Proposta de produto e arquitetura documentada antes do código"],
+      fatos: [ { rotulo: "Status", valor: "Fase 0: coleta" }, { rotulo: "Fontes iniciais", valor: "4 feeds RSS" }, { rotulo: "Banco", valor: "SQLite" }, { rotulo: "Licença", valor: "MIT" } ],
+      repo: "summa"
+    },
+    {
       id: "lab-auth",
       titulo: "Authentication Service",
       ano: 2025,
-      categoria: "Open source",
+      categoria: "Backend",
       emoji: "🔐",
       resumo: "API de autenticação e autorização full-stack, com JWT assinado por RSA e front-end em React.",
       problema: "Autenticação feita sem cuidado é uma das maiores fontes de falha de segurança.",
@@ -147,7 +117,7 @@ window.PORTFOLIO = {
       id: "lab-dsa",
       titulo: "Data Structures & Algorithms",
       ano: 2026,
-      categoria: "Open source",
+      categoria: "Fundamentos",
       emoji: "🧠",
       resumo: "List, Stack e Queue reimplementadas com duas estratégias de armazenamento, além de algoritmos de ordenação.",
       problema: "Entender o custo real de cada operação, que as bibliotecas escondem.",
@@ -157,6 +127,21 @@ window.PORTFOLIO = {
       destaques: ["112 testes JUnit 5 de contrato", "Selection, merge e quick sort", "Big-O documentado por operação"],
       fatos: [ { rotulo: "Testes", valor: "112" }, { rotulo: "Estratégias", valor: "Array · Lista ligada" }, { rotulo: "Ordenações", valor: "3" } ],
       repo: "data-structures-algorithms"
+    },
+    {
+      id: "lab-oop",
+      titulo: "Object-Oriented Programming",
+      ano: 2026,
+      categoria: "Fundamentos",
+      emoji: "🧩",
+      resumo: "Sistema de cadastro de usuários em JavaFX para praticar herança, encapsulamento e arquitetura em camadas.",
+      problema: "Praticar orientação a objetos num caso concreto, em que regras de validação e persistência precisam conviver sem se misturar.",
+      solucao: "App desktop com formulário JavaFX e camadas separadas: models, DAOs, services e controllers. A validação fica nos próprios models, que lançam ModelException em dado inválido, então nunca existe um objeto inválido.",
+      stack: ["Java 21", "JavaFX", "Maven"],
+      arquitetura: ["View (FXML)", "Controller", "Service (interfaces DAO)", "DAO genérico", "Arquivo serializado"],
+      destaques: ["Herança: User com subclasses Student e Professor", "Validação nos setters, com exceção própria", "DAO genérico Dao<T> com persistência em arquivo", "Projeto de estudo, sem uso em produção"],
+      fatos: [ { rotulo: "Interface", valor: "JavaFX" }, { rotulo: "Camadas", valor: "4" }, { rotulo: "Persistência", valor: "Serialização Java" } ],
+      repo: "object-oriented-programming"
     }
   ],
 

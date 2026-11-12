@@ -8,7 +8,7 @@ Não precisa de build: é só publicar os arquivos.
 
 ## Editar o conteúdo
 Todo o conteúdo fica em **`data.js`**: perfil, números, habilidades, projetos e trajetória.
-Procure por `TODO` para encontrar o que falta preencher (usuário do GitHub, LinkedIn, stacks a confirmar e repositórios).
+Cada projeto com `repo` preenchido ganha o botão "Ver repositório", que aponta para `github.com/<perfil.github>/<repo>`.
 
 ## Publicar no GitHub Pages
 1. Crie um repositório chamado `LucasStorck.github.io`. Com esse nome, o site fica em `https://LucasStorck.github.io`.
