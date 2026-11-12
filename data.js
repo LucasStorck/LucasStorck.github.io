@@ -11,44 +11,52 @@ window.PORTFOLIO = {
     email: "lucasstorck@icloud.com",
     linkedin: "https://www.linkedin.com/in/lucasstorck",
     cidade: "Niterói, Rio de Janeiro, Brasil",
-    papeis: ["Desenvolvedor Backend", "Coordenador de TI", "Java & Spring Boot", "Arquiteto de APIs RESTful"],
-    bio: "Desenvolvedor Backend e Coordenador de TI com experiência em arquitetura, desenvolvimento e documentação de APIs RESTful corporativas. Especialista no ecossistema Java e Spring Boot, com vivência em modelagem relacional e bancos de dados em grafos. Lidero equipes de desenvolvimento web, automatizo deploys e busco soluções eficientes, escaláveis e de alto impacto."
+    titulo: "Desenvolvedor Back-End | Java e Spring Boot",
+    /* completam a frase "Eu construo ..." do hero */
+    papeis: ["APIs RESTful em Java", "serviços com Spring Boot", "mensageria com RabbitMQ", "pipelines de CI/CD"],
+    bio: "Desenvolvedor back-end em início de carreira. Na Prefeitura de Niterói, construo APIs RESTful em Java com Spring Boot, PostgreSQL e Docker. Entre as entregas estão a digitalização de uma ficha de notificação com foco em LGPD e uma automação de mensageria com RabbitMQ que organizou mais de 1000 contatos."
   },
 
   numeros: [
-    { valor: 2,  sufixo: "",  rotulo: "experiências profissionais" },
-    { valor: 2026, sufixo: "", rotulo: "ano do TCC em Sistemas de Informação" },
-    { valor: 2,  sufixo: "",  rotulo: "bancos de dados: relacional e grafo" },
-    { valor: 1,  sufixo: "",  rotulo: "equipe de dev liderada" }
+    { valor: 1000, sufixo: "+", rotulo: "contatos organizados com mensageria RabbitMQ" },
+    { valor: 10, sufixo: " min", rotulo: "para preencher a ficha do Sinan Digital" },
+    { valor: 2, sufixo: "", rotulo: "estágios em desenvolvimento: front e back" },
+    { valor: 6, sufixo: "", rotulo: "projetos open source no GitHub" }
   ],
 
   /* nivel: 3 = uso no dia a dia · 2 = já usei em projetos · 1 = explorando */
   habilidades: {
     "Backend": [
-      { nome: "Java", nivel: 3, nota: "Linguagem principal" },
-      { nome: "Spring Boot", nivel: 3, nota: "Serviços corporativos" },
-      { nome: "APIs RESTful", nivel: 3, nota: "Projeto, implementação e docs" }
+      { nome: "Java", nivel: 3, nota: "Linguagem principal, na Prefeitura e nos projetos" },
+      { nome: "Spring Boot", nivel: 3, nota: "Com Spring JPA e Spring Security, na Prefeitura" },
+      { nome: "APIs RESTful", nivel: 3, nota: "Serviços back-end da Prefeitura de Niterói" },
+      { nome: "Swagger / OpenAPI", nivel: 2, nota: "Documentação das APIs nos projetos pessoais" }
     ],
-    "Dados": [
-      { nome: "PostgreSQL", nivel: 3, nota: "Modelagem e consultas SQL" },
-      { nome: "Neo4j", nivel: 2, nota: "Sandbox em nuvem, dados em grafos" }
+    "Dados e mensageria": [
+      { nome: "PostgreSQL", nivel: 3, nota: "Banco principal na Prefeitura e nos projetos" },
+      { nome: "Redis", nivel: 3, nota: "Cache, na Prefeitura e no URL Shortener" },
+      { nome: "RabbitMQ", nivel: 2, nota: "Mensageria da plataforma de Comunicação Internacional" },
+      { nome: "Liquibase", nivel: 3, nota: "Versionamento de schemas de banco" }
     ],
-    "DevOps": [
-      { nome: "Docker", nivel: 2, nota: "Containers" },
-      { nome: "CI/CD", nivel: 2, nota: "Automação de deploy" }
+    "DevOps e ferramentas": [
+      { nome: "Git", nivel: 3, nota: "Versionamento de código" },
+      { nome: "Docker", nivel: 3, nota: "Conteinerização dos serviços" },
+      { nome: "CI/CD", nivel: 3, nota: "Pipelines que estruturo na Prefeitura" },
+      { nome: "Microsoft Azure", nivel: 2, nota: "Deploy em VM" },
+      { nome: "Postman", nivel: 3, nota: "Testes manuais de API" }
     ],
-    "Documentação": [
-      { nome: "Swagger / OpenAPI", nivel: 3, nota: "Contratos de API" },
-      { nome: "Design de APIs", nivel: 3, nota: "Padrões REST" }
+    "Front-end": [
+      { nome: "HTML, CSS e JavaScript", nivel: 2, nota: "Componentes e páginas, no estágio na Ânimo" },
+      { nome: "Figma para código", nivel: 2, nota: "Protótipos convertidos em páginas responsivas" },
+      { nome: "Mobile-first", nivel: 2, nota: "Layouts para desktop, tablet e celular" }
     ],
-    "IA no dev": [
-      { nome: "Claude Code", nivel: 3, nota: "Desenvolvimento assistido" },
-      { nome: "Gemini Notebook", nivel: 2, nota: "Pesquisa e estudo" },
-      { nome: "PicWish", nivel: 1, nota: "Processamento de imagem por IA" }
+    "IA aplicada": [
+      { nome: "Claude Code", nivel: 3, nota: "Desenvolvimento assistido por IA" },
+      { nome: "Spec-Driven Development", nivel: 2, nota: "Especificação antes do código" }
     ],
-    "Liderança": [
-      { nome: "Coordenação técnica", nivel: 3, nota: "Equipes de desenvolvimento web" },
-      { nome: "Boas práticas", nivel: 3, nota: "Engenharia e colaboração ágil" }
+    "Métodos ágeis": [
+      { nome: "Scrum", nivel: 3, nota: "Dailies, planejamentos, refinamentos e retrospectivas" },
+      { nome: "Kanban", nivel: 3, nota: "Fluxo de trabalho na Prefeitura" }
     ]
   },
 
@@ -145,15 +153,15 @@ window.PORTFOLIO = {
     }
   ],
 
-  /* Linha do tempo de carreira. Ajuste a ordem e os períodos conforme a realidade. */
+  /* Linha do tempo de carreira, em ordem cronológica. */
   trajetoria: [
-    { periodo: "Graduação", titulo: "Bacharelado em Sistemas de Informação", local: "Unilasalle-RJ", tipo: "Formação",
-      texto: "Base acadêmica em engenharia de software, dados e sistemas. TCC concluído e apresentado em 2026.", pontos: ["TCC apresentado em 2026"] },
-    { periodo: "Empresa Júnior", titulo: "Coordenador de TI", local: "Ânimo Consultoria", tipo: "Liderança",
-      texto: "Liderança técnica de equipes de desenvolvimento web.", pontos: ["Alinhamento técnico e entrega de projetos", "Direcionamento de arquitetura das aplicações", "Boas práticas e colaboração ágil"] },
-    { periodo: "Atual", titulo: "Desenvolvedor Backend", local: "Prefeitura de Niterói", tipo: "Profissional",
-      texto: "Soluções de software para a administração pública municipal.", pontos: ["APIs RESTful em Java", "Serviços corporativos com Spring Boot", "Comunicação otimizada entre sistemas"] },
-    { periodo: "2026", titulo: "TCC e próximos passos", local: "Unilasalle-RJ", tipo: "Marco",
-      texto: "Fechamento da graduação e foco em arquiteturas escaláveis de alto impacto.", pontos: ["Conclusão da graduação", "Busca por desafios de arquitetura e backend"] }
+    { periodo: "Jun/2022 – hoje", titulo: "Bacharelado em Sistemas de Informação", local: "Universidade La Salle", tipo: "Formação",
+      texto: "Graduação em andamento.", pontos: ["Conclusão prevista para 2027.1"] },
+    { periodo: "Jan/2024 – Jun/2025", titulo: "Desenvolvedor Front-End", local: "Ânimo Consultoria · Niterói, RJ", tipo: "Estágio",
+      texto: "Criação e manutenção de componentes, formulários e páginas web em HTML, CSS e JavaScript.",
+      pontos: ["Protótipos do Figma convertidos em código funcional e responsivo, junto com a equipe de Design", "Layouts mobile-first para desktop, tablet e celular", "Equipe ágil com Scrum: dailies, planejamentos, refinamentos e retrospectivas"] },
+    { periodo: "Jun/2025 – hoje", titulo: "Desenvolvedor Back-End", local: "Prefeitura Municipal de Niterói · Niterói, RJ", tipo: "Estágio",
+      texto: "APIs RESTful em Java com Spring Boot, Spring JPA e Spring Security, PostgreSQL e Redis, em times ágeis com Scrum e Kanban.",
+      pontos: ["Sinan Digital: back-end da plataforma que digitalizou a Ficha de Notificação de Violência, com foco na LGPD. O preenchimento caiu para cerca de 10 minutos", "Comunicação Internacional: mensageria entre cidades com RabbitMQ, que substituiu o disparo manual por planilhas e organizou mais de 1000 contatos", "Pipelines de CI/CD, Docker, Git e Liquibase, com deploy em VM na Microsoft Azure"] }
   ]
 };

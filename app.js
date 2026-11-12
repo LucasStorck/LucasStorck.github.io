@@ -115,7 +115,7 @@
   }
 
   // marquee
-  const words = ['JAVA', 'SPRING BOOT', 'REST APIs', 'POSTGRESQL', 'NEO4J', 'DOCKER', 'CI/CD', 'SWAGGER', 'CLAUDE CODE'];
+  const words = ['JAVA', 'SPRING BOOT', 'REST APIs', 'POSTGRESQL', 'REDIS', 'RABBITMQ', 'DOCKER', 'CI/CD', 'AZURE', 'CLAUDE CODE'];
   const row = words.map(w => `<span>★ ${w}</span>`).join('');
   $('#marquee').innerHTML = row + row + row + row;
 
@@ -124,7 +124,7 @@
   const say = (t, cls = '') => { out.insertAdjacentHTML('beforeend', `<div class="${cls}">${t}</div>`); out.scrollTop = out.scrollHeight; };
   const cmds = {
     help: () => 'comandos: <b>whoami</b> · <b>skills</b> · <b>projetos</b> · <b>contato</b> · <b>tour</b> · <b>clear</b>',
-    whoami: () => `${D.perfil.nome}\n${D.perfil.papeis.join(' | ')}`,
+    whoami: () => `${D.perfil.nome}\n${D.perfil.titulo}\n${D.perfil.cidade}`,
     skills: () => Object.entries(D.habilidades).map(([k, v]) => `${k}: ${v.map(s => s.nome).join(', ')}`).join('\n'),
     projetos: () => D.projetos.map(p => `${p.emoji} ${p.titulo}`).join('\n'),
     contato: () => `e-mail: ${D.perfil.email}\ngithub: github.com/${D.perfil.github}` + (hasLinkedin ? `\nlinkedin: ${D.perfil.linkedin}` : ''),
