@@ -9,7 +9,7 @@ window.PORTFOLIO = {
     curto: "Lucas Storck",
     github: "LucasStorck",
     email: "lucasstorck@icloud.com",
-    linkedin: "https://www.linkedin.com/in/SEU-PERFIL",     // TODO
+    linkedin: "https://www.linkedin.com/in/lucasstorck",
     cidade: "Niterói, Rio de Janeiro, Brasil",
     papeis: ["Desenvolvedor Backend", "Coordenador de TI", "Java & Spring Boot", "Arquiteto de APIs RESTful"],
     bio: "Desenvolvedor Backend e Coordenador de TI com experiência em arquitetura, desenvolvimento e documentação de APIs RESTful corporativas. Especialista no ecossistema Java e Spring Boot, com vivência em modelagem relacional e bancos de dados em grafos. Lidero equipes de desenvolvimento web, automatizo deploys e busco soluções eficientes, escaláveis e de alto impacto."
