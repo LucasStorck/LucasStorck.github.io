@@ -153,15 +153,15 @@ window.PORTFOLIO = {
     }
   ],
 
-  /* Linha do tempo de carreira, em ordem cronológica. */
+  /* Linha do tempo de carreira, da mais recente para a mais antiga. */
   trajetoria: [
-    { periodo: "Jun/2022 – hoje", titulo: "Bacharelado em Sistemas de Informação", local: "Universidade La Salle", tipo: "Formação",
-      texto: "Graduação em andamento.", pontos: ["Conclusão prevista para 2027.1"] },
+    { periodo: "Jun/2025 – hoje", titulo: "Desenvolvedor Back-End", local: "Prefeitura Municipal de Niterói · Niterói, RJ", tipo: "Estágio",
+      texto: "APIs RESTful em Java com Spring Boot, Spring JPA e Spring Security, PostgreSQL e Redis, em times ágeis com Scrum e Kanban.",
+      pontos: ["Sinan Digital: back-end da plataforma que digitalizou a Ficha de Notificação de Violência, com foco na LGPD. O preenchimento caiu para cerca de 10 minutos", "Comunicação Internacional: mensageria entre cidades com RabbitMQ, que substituiu o disparo manual por planilhas e organizou mais de 1000 contatos", "Pipelines de CI/CD, Docker, Git e Liquibase, com deploy em VM na Microsoft Azure"] },
     { periodo: "Jan/2024 – Jun/2025", titulo: "Desenvolvedor Front-End", local: "Ânimo Consultoria · Niterói, RJ", tipo: "Estágio",
       texto: "Criação e manutenção de componentes, formulários e páginas web em HTML, CSS e JavaScript.",
       pontos: ["Protótipos do Figma convertidos em código funcional e responsivo, junto com a equipe de Design", "Layouts mobile-first para desktop, tablet e celular", "Equipe ágil com Scrum: dailies, planejamentos, refinamentos e retrospectivas"] },
-    { periodo: "Jun/2025 – hoje", titulo: "Desenvolvedor Back-End", local: "Prefeitura Municipal de Niterói · Niterói, RJ", tipo: "Estágio",
-      texto: "APIs RESTful em Java com Spring Boot, Spring JPA e Spring Security, PostgreSQL e Redis, em times ágeis com Scrum e Kanban.",
-      pontos: ["Sinan Digital: back-end da plataforma que digitalizou a Ficha de Notificação de Violência, com foco na LGPD. O preenchimento caiu para cerca de 10 minutos", "Comunicação Internacional: mensageria entre cidades com RabbitMQ, que substituiu o disparo manual por planilhas e organizou mais de 1000 contatos", "Pipelines de CI/CD, Docker, Git e Liquibase, com deploy em VM na Microsoft Azure"] }
+    { periodo: "Jun/2022 – hoje", titulo: "Bacharelado em Sistemas de Informação", local: "Universidade La Salle", tipo: "Formação",
+      texto: "Graduação em andamento.", pontos: ["Conclusão prevista para 2027.1"] }
   ]
 };

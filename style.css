@@ -181,15 +181,57 @@ h1,h2,h3,h4,h5{font-weight:700;letter-spacing:-.02em}
 .reveal{opacity:0;transform:translateY(30px)}
 
 /* ---------- Responsivo ---------- */
+/* Nada passa da largura da tela (faixa inclinada, sombras, gutters).
+   "clip" não cria contêiner de rolagem, então o position:sticky continua funcionando. */
+main{overflow-x:clip}
+.skill-nota{display:none}
+
+/* Telas sem a coluna de detalhe ao lado: a nota aparece embaixo de cada habilidade */
+@media (max-width:991px){
+  .skill-nota{display:block;font-size:.8rem;color:#2f4a3a;margin-top:.15rem;font-weight:400}
+  .skill-note{display:none}
+  .skill:hover,.skill.on{background:transparent;padding-left:.5rem}
+}
+
 @media (max-width:767px){
-  :root{--rail:26px;--topbar:112px}
+  :root{--rail:26px;--topbar:110px}
   .rail::before{left:8px}
   .rail-node{width:30px;height:30px;margin-left:-6px}
   .route{padding-top:3rem}
   .stops{padding-left:1.6rem}
   .stop::before{left:-1.7rem}
-  .display-title{font-size:2.2rem}
+  .display-title{font-size:clamp(1.9rem,9vw,2.2rem)}
+  .route-btn{font-size:.82rem;padding:.3rem .65rem}
+  .route-btn small{display:none}
+
+  /* adesivos viram uma linha de etiquetas acima do terminal, sem cobrir o conteúdo */
+  .terminal-wrap{padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+  .floaty{position:static;animation:none;font-size:.8rem}
+  .terminal{flex-basis:100%;margin-top:.4rem;box-shadow:6px 6px 0 var(--g)}
   .terminal-out{height:200px}
+  /* 16px evita o zoom automático do iOS ao focar o campo */
+  .terminal-in input{font-size:16px}
+
+  .marquee{margin-top:2.5rem}
+  .proj,.tl-card{padding:1.1rem}
+  .proj h3{font-size:1.25rem}
+  .proj .emoji{font-size:2rem}
+}
+
+/* Toque: alvos maiores e sem efeitos de hover que "grudam" depois do toque */
+@media (pointer:coarse){
+  .chip{min-height:40px;padding:.4rem .9rem}
+  .route-btn{min-height:36px;display:inline-flex;align-items:center}
+}
+@media (hover:none){
+  .btn-nb:hover{transform:none;box-shadow:var(--sh)}
+  .btn-nb-sm:hover{box-shadow:var(--sh-sm)}
+  .chip:hover{transform:none;box-shadow:var(--sh-sm)}
+  .route-btn:not(.active):hover{transform:none;box-shadow:var(--sh-sm);background:var(--white)}
+  .proj:hover{transform:none;box-shadow:var(--sh);background:var(--white)}
+  .proj:hover .emoji,.proj:hover .open-hint i{transform:none}
+  .stat:hover{transform:none;background:var(--white)}
+  .stop:hover::before{transform:rotate(45deg)}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}

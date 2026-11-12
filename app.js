@@ -98,9 +98,9 @@
     const w = D.perfil.papeis[pi];
     if (reduce) { typed.textContent = w; return; }
     typed.textContent = w.slice(0, ci);
-    let t = del ? 35 : 80;
-    if (!del && ci === w.length) { del = true; t = 1400; }
-    else if (del && ci === 0) { del = false; pi = (pi + 1) % D.perfil.papeis.length; t = 300; }
+    let t = del ? 20 : 45;
+    if (!del && ci === w.length) { del = true; t = 1500; }
+    else if (del && ci === 0) { del = false; pi = (pi + 1) % D.perfil.papeis.length; t = 250; }
     ci += del ? -1 : 1;
     setTimeout(tick, t);
   })();
@@ -152,7 +152,7 @@
   function renderSkills() {
     $$('#skillTabs .chip').forEach(b => b.classList.toggle('on', b.dataset.c === cat));
     $('#skillList').innerHTML = D.habilidades[cat].map((s, i) =>
-      `<div class="skill" data-i="${i}"><b>${esc(s.nome)}</b>${pips(s.nivel)}</div>`).join('');
+      `<div class="skill" data-i="${i}"><div><b>${esc(s.nome)}</b><small class="skill-nota">${esc(s.nota || '')}</small></div>${pips(s.nivel)}</div>`).join('');
     const items = $$('#skillList .skill');
     if (!reduce) gsap.from(items, { x: -30, opacity: 0, stagger: .08, duration: .4, ease: 'power2.out' });
     items.forEach(el => {
