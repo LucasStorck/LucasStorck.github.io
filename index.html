@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucas Storck · Portfólio</title>
+  <meta name="description" content="Portfólio de Lucas Storck Mendes: desenvolvedor backend Java, Spring Boot e APIs RESTful.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2322c55e'/><text x='50' y='70' font-size='60' text-anchor='middle' font-family='monospace' font-weight='bold'>LS</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ================= CABEÇALHO: ROTAS + TIMELINE HORIZONTAL ================= -->
+  <header class="topbar">
+    <div class="container-xxl d-flex align-items-center gap-3 py-2">
+      <a href="#/inicio" class="brand text-decoration-none" data-route="inicio">
+        <span class="brand-box">LS</span><span class="d-none d-md-inline">lucas.storck</span>
+      </a>
+      <nav class="routes flex-grow-1" id="routes" aria-label="Rotas do portfólio"></nav>
+      <button class="btn-nb btn-nb-sm d-none d-lg-inline-flex" id="tour" title="Percorrer todas as rotas automaticamente">
+        <i class="bi bi-play-fill"></i> Tour
+      </button>
+    </div>
+    <!-- Timeline estilo Voyager: trilho com paradas e um pin que viaja -->
+    <div class="container-xxl pb-2">
+      <div class="track" id="track" aria-hidden="true">
+        <div class="track-line"><div class="track-fill" id="trackFill"></div></div>
+        <div class="track-stops" id="trackStops"></div>
+        <div class="track-pin" id="trackPin"><i class="bi bi-geo-alt-fill"></i><span id="trackPct">0%</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+
+    <!-- ================= ROTA 01: INÍCIO ================= -->
+    <section class="route hero" id="inicio" data-title="Início">
+      <div class="route-grid container-xxl">
+        <div class="rail"><span class="rail-node"></span></div>
+        <div class="route-body">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+              <span class="sticker rot-n2"><i class="bi bi-geo-alt-fill"></i> Niterói · RJ</span>
+              <h1 class="display-title mt-3">Olá, eu sou <span class="hl">Lucas</span>.<br>Eu construo <span class="typed-wrap"><span id="typed"></span><span class="caret">|</span></span></h1>
+              <p class="lead mt-4 hero-bio" id="bio"></p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="#/projetos" class="btn-nb"><i class="bi bi-rocket-takeoff"></i> Ver projetos</a>
+                <a href="#/contato" class="btn-nb btn-nb-white"><i class="bi bi-chat-dots"></i> Vamos conversar</a>
+              </div>
+              <div class="row g-3 mt-4" id="numeros"></div>
+            </div>
+            <div class="col-lg-5">
+              <div class="terminal-wrap">
+                <div class="floaty f1">☕ Java</div>
+                <div class="floaty f2">🍃 Spring</div>
+                <div class="floaty f3">🐘 Postgres</div>
+                <div class="floaty f4">🐳 Docker</div>
+                <div class="terminal">
+                  <div class="terminal-bar"><i></i><i></i><i></i><span>~/portfolio — bash</span></div>
+                  <div class="terminal-out" id="termOut"></div>
+                  <label class="terminal-in"><span>$</span><input id="termIn" autocomplete="off" spellcheck="false" placeholder="digite: help"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true"><div class="marquee-in" id="marquee"></div></div>
+    </section>
+
+    <!-- ================= ROTA 02: SOBRE ================= -->
+    <section class="route" id="sobre" data-title="Sobre">
+      <div class="route-grid container-xxl">
+        <div class="rail"><span class="rail-node"></span></div>
+        <div class="route-body">
+          <div class="route-head"><span class="route-num">02</span><h2>Sobre mim</h2></div>
+          <div class="row g-4">
+            <div class="col-lg-7">
+              <div class="card-nb p-4 reveal">
+                <h3 class="h5 mono">// resumo profissional</h3>
+                <p class="mb-3">Desenvolvedor Backend e Coordenador de TI, com experiência em <strong>arquitetura, desenvolvimento e documentação de APIs RESTful corporativas</strong>. Especialista no ecossistema Java e Spring Boot, com vivência em modelagem de dados relacionais e bancos em grafos.</p>
+                <p class="mb-3">Tenho histórico de <strong>liderança técnica</strong> de equipes de desenvolvimento web e de <strong>automação de processos de deploy</strong>.</p>
+                <p class="mb-0">Estudante de Sistemas de Informação, orientado à resolução de problemas e a construir software eficiente, escalável e de alto impacto.</p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card-nb card-green p-4 reveal">
+                <h3 class="h5 mono">// ficha técnica</h3>
+                <ul class="fact-list">
+                  <li><i class="bi bi-geo-alt"></i> Niterói, Rio de Janeiro</li>
+                  <li><i class="bi bi-mortarboard"></i> Sistemas de Informação · Unilasalle-RJ</li>
+                  <li><i class="bi bi-building"></i> Prefeitura de Niterói</li>
+                  <li><i class="bi bi-people"></i> Ânimo Consultoria (Empresa Júnior)</li>
+                  <li><i class="bi bi-braces"></i> Java · Spring Boot · PostgreSQL · Neo4j</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROTA 03: HABILIDADES ================= -->
+    <section class="route" id="habilidades" data-title="Habilidades">
+      <div class="route-grid container-xxl">
+        <div class="rail"><span class="rail-node"></span></div>
+        <div class="route-body">
+          <div class="route-head"><span class="route-num">03</span><h2>Habilidades</h2></div>
+          <p class="text-muted-nb">Escolha uma categoria. Passe o mouse (ou toque) em cada habilidade para ver onde eu a uso.</p>
+          <div class="chips mb-4" id="skillTabs"></div>
+          <div class="row g-4">
+            <div class="col-lg-7"><div class="card-nb p-4" id="skillList"></div></div>
+            <div class="col-lg-5">
+              <div class="card-nb card-green p-4 h-100" id="skillDetail">
+                <div class="legend">
+                  <h3 class="h5 mono">// legenda</h3>
+                  <div class="lv"><span class="dots" data-n="3"></span> uso no dia a dia</div>
+                  <div class="lv"><span class="dots" data-n="2"></span> já usei em projetos</div>
+                  <div class="lv"><span class="dots" data-n="1"></span> explorando</div>
+                </div>
+                <div class="skill-note mt-4" id="skillNote">Passe o mouse em uma habilidade 👉</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROTA 04: PROJETOS ================= -->
+    <section class="route" id="projetos" data-title="Projetos">
+      <div class="route-grid container-xxl">
+        <div class="rail"><span class="rail-node"></span></div>
+        <div class="route-body">
+          <div class="route-head"><span class="route-num">04</span><h2>Projetos</h2></div>
+          <p class="text-muted-nb">Cada parada da rota é um projeto. Clique para abrir o detalhamento completo.</p>
+          <div class="chips mb-4" id="projFilters"></div>
+          <div class="stops" id="projList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROTA 05: TRAJETÓRIA ================= -->
+    <section class="route" id="trajetoria" data-title="Trajetória">
+      <div class="route-grid container-xxl">
+        <div class="rail"><span class="rail-node"></span></div>
+        <div class="route-body">
+          <div class="route-head"><span class="route-num">05</span><h2>Trajetória</h2></div>
+          <div class="stops" id="trajList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROTA 06: CONTATO ================= -->
+    <section class="route" id="contato" data-title="Contato">
+      <div class="route-grid container-xxl">
+        <div class="rail"><span class="rail-node"></span></div>
+        <div class="route-body">
+          <div class="route-head"><span class="route-num">06</span><h2>Contato</h2></div>
+          <div class="card-nb card-green p-4 p-md-5 reveal text-center">
+            <h3 class="display-6 fw-bold">Chegamos ao destino 🏁</h3>
+            <p class="lead">Tem um projeto, uma vaga ou só quer trocar ideia sobre Java e arquitetura?</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" id="contactBtns"></div>
+          </div>
+          <footer class="foot mono">© <span id="year"></span> Lucas Storck Mendes · feito com HTML, Bootstrap e muita cafeína</footer>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navegação rápida mobile -->
+  <button class="fab" id="toTop" title="Voltar ao início"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- ================= MODAL DO PROJETO ================= -->
+  <div class="modal fade" id="projModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content card-nb">
+        <div class="modal-header">
+          <div>
+            <span class="sticker" id="mCat"></span>
+            <h2 class="modal-title h3 mt-2" id="mTitle"></h2>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nb-tabs mb-3" role="tablist">
+            <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tVisao" type="button">Visão geral</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tArq" type="button">Arquitetura</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tStack" type="button">Stack</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tFatos" type="button">Fatos</button></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tVisao"></div>
+            <div class="tab-pane fade" id="tArq"></div>
+            <div class="tab-pane fade" id="tStack"></div>
+            <div class="tab-pane fade" id="tFatos"></div>
+          </div>
+        </div>
+        <div class="modal-footer" id="mFoot"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
