@@ -126,11 +126,11 @@
     help: () => 'comandos: <b>whoami</b> · <b>skills</b> · <b>projetos</b> · <b>contato</b> · <b>tour</b> · <b>clear</b>',
     whoami: () => `${D.perfil.nome}\n${D.perfil.titulo}\n${D.perfil.cidade}`,
     skills: () => Object.entries(D.habilidades).map(([k, v]) => `${k}: ${v.map(s => s.nome).join(', ')}`).join('\n'),
-    projetos: () => D.projetos.map(p => `${p.emoji} ${p.titulo}`).join('\n'),
+    projetos: () => D.projetos.map(p => `▸ ${p.titulo}`).join('\n'),
     contato: () => `e-mail: ${D.perfil.email}\ngithub: github.com/${D.perfil.github}` + (hasLinkedin ? `\nlinkedin: ${D.perfil.linkedin}` : ''),
-    tour: () => { $('#tour').click(); return 'embarcando... 🚀'; },
+    tour: () => { $('#tour').click(); return 'embarcando... >>>'; },
     clear: () => { out.innerHTML = ''; return null; },
-    sudo: () => 'boa tentativa 😄'
+    sudo: () => 'boa tentativa :)'
   };
   say('Bem-vindo! Digite <b>help</b> para começar.');
   inp.addEventListener('keydown', e => {
@@ -176,7 +176,7 @@
     <article class="stop reveal" data-cat="${esc(p.categoria)}">
       <span class="stop-year">${esc(p.ano)}</span>
       <div class="card-nb proj" data-id="${p.id}" tabindex="0" role="button" aria-label="Abrir ${esc(p.titulo)}">
-        <span class="emoji">${p.emoji}</span>
+        <span class="ico-nb" aria-hidden="true"><i class="bi bi-${esc(p.icone)}"></i></span>
         <h3>${esc(p.titulo)}</h3>
         <p class="mb-2">${esc(p.resumo)}</p>
         <div>${p.stack.map(s => `<span class="tag">${esc(s)}</span>`).join('')}</div>
@@ -195,7 +195,7 @@
   const modalEl = $('#projModal'), modal = new bootstrap.Modal(modalEl);
   function openProject(id) {
     const p = D.projetos.find(x => x.id === id); if (!p) return;
-    $('#mCat').textContent = `${p.emoji} ${p.categoria}${String(p.ano) !== p.categoria ? ' · ' + p.ano : ''}`;
+    $('#mCat').innerHTML = `<i class="bi bi-${esc(p.icone)} me-1"></i>${esc(p.categoria)}${String(p.ano) !== p.categoria ? ' · ' + esc(p.ano) : ''}`;
     $('#mTitle').textContent = p.titulo;
     $('#tVisao').innerHTML = `
       <div class="row g-3">

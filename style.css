@@ -65,6 +65,16 @@ h1,h2,h3,h4,h5{font-weight:700;letter-spacing:-.02em}
 .chip:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
 .chip.on{background:var(--ink);color:var(--g)}
 
+/* Ícone neobrutalista: glifo do Bootstrap Icons numa caixa com borda grossa e sombra dura */
+.ico-nb{
+  display:inline-grid;place-items:center;flex-shrink:0;width:3.25rem;height:3.25rem;
+  background:var(--g);color:var(--ink);border:var(--bd);box-shadow:var(--sh-sm);
+  font-size:1.6rem;line-height:1;transition:transform .2s,box-shadow .2s,background .2s,color .2s;
+}
+.ico-nb.sm{width:1.6rem;height:1.6rem;font-size:.85rem;border-width:2px;box-shadow:2px 2px 0 var(--ink)}
+.ico-nb.ink{background:var(--ink);color:var(--g)}
+.ico-nb.white{background:var(--white)}
+
 /* ---------- Rotas e rail vertical ---------- */
 .route{position:relative;padding:5rem 0 3rem;min-height:70vh}
 .route.hero{padding-top:3.5rem;min-height:calc(100vh - var(--topbar))}
@@ -103,7 +113,7 @@ h1,h2,h3,h4,h5{font-weight:700;letter-spacing:-.02em}
 .terminal-out a{color:#fde047}
 .terminal-in{display:flex;gap:.5rem;padding:.6rem .8rem;border-top:2px dashed var(--g);margin:0}
 .terminal-in input{flex:1;background:transparent;border:0;outline:0;color:#fff;font:inherit}
-.floaty{position:absolute;z-index:2;background:var(--white);border:var(--bd);box-shadow:var(--sh-sm);padding:.2rem .7rem;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.85rem;animation:float 4s ease-in-out infinite}
+.floaty{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:.45rem;background:var(--white);border:var(--bd);box-shadow:var(--sh-sm);padding:.25rem .7rem .25rem .3rem;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.85rem;animation:float 4s ease-in-out infinite}
 .f1{top:-4px;left:0;animation-delay:0s}.f2{top:30px;right:-6px;animation-delay:-1s}
 .f3{bottom:20px;left:-10px;animation-delay:-2s}.f4{bottom:-6px;right:20px;animation-delay:-3s}
 @keyframes float{50%{transform:translateY(-12px) rotate(2deg)}}
@@ -142,8 +152,8 @@ h1,h2,h3,h4,h5{font-weight:700;letter-spacing:-.02em}
 .stop-year{display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:700;background:var(--ink);color:var(--g);padding:.1rem .6rem;margin-bottom:.5rem;font-size:.85rem}
 .proj{padding:1.4rem;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;position:relative;overflow:hidden}
 .proj:hover{transform:translate(-4px,-4px);box-shadow:10px 10px 0 var(--ink);background:var(--g-mint)}
-.proj .emoji{font-size:2.4rem;float:right;transition:transform .3s}
-.proj:hover .emoji{transform:scale(1.3) rotate(12deg)}
+.proj .ico-nb{float:right;margin:0 0 .5rem .75rem}
+.proj:hover .ico-nb{background:var(--ink);color:var(--g);transform:translate(-2px,-2px) rotate(-6deg);box-shadow:5px 5px 0 var(--g)}
 .proj h3{font-size:1.45rem}
 .tag{display:inline-block;border:2px solid var(--ink);padding:0 .5rem;margin:.15rem .15rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.75rem;font-weight:500;background:var(--white)}
 .open-hint{margin-top:.8rem;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.85rem}
@@ -170,6 +180,7 @@ h1,h2,h3,h4,h5{font-weight:700;letter-spacing:-.02em}
 .hi-list{list-style:none;padding:0}
 .hi-list li{padding:.5rem .8rem;margin-bottom:.5rem;border:var(--bd);background:var(--white);box-shadow:var(--sh-sm)}
 .hi-list li::before{content:"✔ ";color:var(--g-deep);font-weight:700}
+.contact-title{display:inline-flex;align-items:center;gap:.8rem;flex-wrap:wrap;justify-content:center}
 
 /* ---------- Diversos ---------- */
 .foot{margin-top:3rem;font-size:.8rem;text-align:center}
@@ -215,7 +226,7 @@ main{overflow-x:clip}
   .marquee{margin-top:2.5rem}
   .proj,.tl-card{padding:1.1rem}
   .proj h3{font-size:1.25rem}
-  .proj .emoji{font-size:2rem}
+  .proj .ico-nb{width:2.75rem;height:2.75rem;font-size:1.3rem}
 }
 
 /* Toque: alvos maiores e sem efeitos de hover que "grudam" depois do toque */
@@ -229,7 +240,8 @@ main{overflow-x:clip}
   .chip:hover{transform:none;box-shadow:var(--sh-sm)}
   .route-btn:not(.active):hover{transform:none;box-shadow:var(--sh-sm);background:var(--white)}
   .proj:hover{transform:none;box-shadow:var(--sh);background:var(--white)}
-  .proj:hover .emoji,.proj:hover .open-hint i{transform:none}
+  .proj:hover .open-hint i{transform:none}
+  .proj:hover .ico-nb{transform:none;background:var(--g);color:var(--ink);box-shadow:var(--sh-sm)}
   .stat:hover{transform:none;background:var(--white)}
   .stop:hover::before{transform:rotate(45deg)}
 }

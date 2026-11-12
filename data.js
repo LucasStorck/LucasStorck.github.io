@@ -2,6 +2,7 @@
    EDITE AQUI: todo o conteúdo do portfólio vive neste arquivo.
    Baseado no currículo de Lucas Storck Mendes.
    Projetos: só os repositórios públicos do GitHub.
+   icone: nome de um ícone do Bootstrap Icons (https://icons.getbootstrap.com), sem o prefixo "bi-".
    ===================================================== */
 window.PORTFOLIO = {
   perfil: {
@@ -66,7 +67,7 @@ window.PORTFOLIO = {
       titulo: "URL Shortener",
       ano: 2026,
       categoria: "Backend",
-      emoji: "🔗",
+      icone: "link-45deg",
       resumo: "Encurtador de URLs com métricas de cliques, cache em Redis e documentação Swagger.",
       problema: "Links longos são ruins de compartilhar e não dizem quantas pessoas clicaram.",
       solucao: "API que gera um código curto para qualquer URL http(s), com expiração opcional, redirect 302 e contagem de cliques. Os redirects ficam em cache no Redis (cache-aside), com fallback para o banco se o Redis cair.",
@@ -81,7 +82,7 @@ window.PORTFOLIO = {
       titulo: "E-commerce Microservices",
       ano: 2026,
       categoria: "Backend",
-      emoji: "🛒",
+      icone: "cart3",
       resumo: "Backend de e-commerce em seis microsserviços com Spring Cloud, Kafka e bancos separados por serviço.",
       problema: "Entender na prática como as peças de uma arquitetura de microsserviços se encaixam.",
       solucao: "Seis serviços Spring Boot independentes, cada um com seus próprios dados, registrados no Eureka e expostos por um API Gateway. Os pedidos consultam o estoque e publicam eventos no Kafka para o serviço de notificação.",
@@ -96,7 +97,7 @@ window.PORTFOLIO = {
       titulo: "Summa",
       ano: 2026,
       categoria: "Em andamento",
-      emoji: "📰",
+      icone: "newspaper",
       resumo: "Briefing diário de notícias que agrupa as matérias de vários veículos em um único acontecimento. Em desenvolvimento.",
       problema: "O mesmo fato aparece em dez portais diferentes, e ler todos para entender o que aconteceu toma tempo.",
       solucao: "Pipeline em etapas ligadas por estado no banco: coleta por RSS, normalização, agrupamento por acontecimento e resumo por IA. A primeira fase, de coleta e normalização, já está pronta, com URLs canônicas para deduplicar as matérias e registro de cada coleta.",
@@ -111,7 +112,7 @@ window.PORTFOLIO = {
       titulo: "Authentication Service",
       ano: 2025,
       categoria: "Backend",
-      emoji: "🔐",
+      icone: "shield-lock-fill",
       resumo: "API de autenticação e autorização full-stack, com JWT assinado por RSA e front-end em React.",
       problema: "Autenticação feita sem cuidado é uma das maiores fontes de falha de segurança.",
       solucao: "API standalone que emite JWTs próprios assinados com par de chaves RSA, com access token curto e refresh token. A autorização é stateless via OAuth2 Resource Server, com controle por papel e por dono do recurso.",
@@ -126,7 +127,7 @@ window.PORTFOLIO = {
       titulo: "Data Structures & Algorithms",
       ano: 2026,
       categoria: "Fundamentos",
-      emoji: "🧠",
+      icone: "diagram-3-fill",
       resumo: "List, Stack e Queue reimplementadas com duas estratégias de armazenamento, além de algoritmos de ordenação.",
       problema: "Entender o custo real de cada operação, que as bibliotecas escondem.",
       solucao: "Cada estrutura foi implementada duas vezes, com array redimensionável e com lista ligada, para comparar o comportamento na prática. A complexidade Big-O de cada operação está documentada no Javadoc.",
@@ -141,7 +142,7 @@ window.PORTFOLIO = {
       titulo: "Object-Oriented Programming",
       ano: 2026,
       categoria: "Fundamentos",
-      emoji: "🧩",
+      icone: "boxes",
       resumo: "Sistema de cadastro de usuários em JavaFX para praticar herança, encapsulamento e arquitetura em camadas.",
       problema: "Praticar orientação a objetos num caso concreto, em que regras de validação e persistência precisam conviver sem se misturar.",
       solucao: "App desktop com formulário JavaFX e camadas separadas: models, DAOs, services e controllers. A validação fica nos próprios models, que lançam ModelException em dado inválido, então nunca existe um objeto inválido.",
