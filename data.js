@@ -1,7 +1,8 @@
 /* =====================================================
    EDITE AQUI: todo o conteúdo do portfólio vive neste arquivo.
    Baseado no currículo de Lucas Storck Mendes.
-   Projetos: só os repositórios públicos do GitHub.
+   Projetos: os repositórios públicos do GitHub, mais os sistemas da Prefeitura
+   (código privado, por isso repo: null e sem botão de repositório).
    icone: nome de um ícone do Bootstrap Icons (https://icons.getbootstrap.com), sem o prefixo "bi-".
    ===================================================== */
 window.PORTFOLIO = {
@@ -62,6 +63,47 @@ window.PORTFOLIO = {
   },
 
   projetos: [
+    {
+      id: "pmn-sinan",
+      titulo: "Sinan Digital",
+      ano: 2026,
+      categoria: "Prefeitura",
+      icone: "clipboard2-pulse-fill",
+      resumo: "Digitalização da Ficha de Notificação de Violência do SUS (SINAN) na Prefeitura de Niterói, com foco na LGPD.",
+      problema: "Profissionais de saúde preenchiam a ficha de notificação de violência em papel: um processo lento, sujeito a erro e difícil de virar dado epidemiológico, com dados sensíveis protegidos pela LGPD.",
+      solucao: "Aplicação full-stack com formulário em 8 etapas, PDF gerado a partir do modelo oficial, criptografia de campos sensíveis, modo offline com sincronização automática e login único com Azure AD. O preenchimento caiu para cerca de 10 minutos.",
+      stack: ["Java 25", "Spring Boot 4", "Spring Security", "PostgreSQL", "Redis", "Apache PDFBox", "Azure AD", "Next.js", "Docker"],
+      arquitetura: ["Formulário em 8 etapas", "API Spring Boot", "Campos criptografados", "PostgreSQL + Redis", "PDF oficial / CSV"],
+      destaques: [
+        "Exportação de relatórios epidemiológicos em CSV, anonimizados conforme a LGPD",
+        "Fim da duplicidade de pacientes com hash HMAC-SHA256 do Cartão SUS criptografado",
+        "Contador de caracteres com alerta de limite no campo de observações",
+        "Projeto em equipe; o código é da Prefeitura e não é público"
+      ],
+      fatos: [ { rotulo: "Preenchimento", valor: "~10 min" }, { rotulo: "Domínio", valor: "Saúde pública · SUS" }, { rotulo: "Dados", valor: "Sensíveis (LGPD)" }, { rotulo: "Equipe", valor: "3 devs" } ],
+      repo: null
+    },
+    {
+      id: "pmn-mensageria",
+      titulo: "Comunicação Internacional",
+      ano: 2026,
+      categoria: "Prefeitura",
+      icone: "envelope-paper-fill",
+      resumo: "Mensageria da Prefeitura de Niterói com a rede Mercocidades: contatos das cidades parceiras e envio de e-mails institucionais em massa.",
+      problema: "A comunicação com as cidades parceiras da América Latina dependia de disparo manual a partir de planilhas, sem rastreio e sujeito aos limites de envio do Microsoft 365.",
+      solucao: "API Spring Boot com front Next.js. O envio entra numa fila no RabbitMQ, com retentativas e dead-letter queue, e sai pela Microsoft Graph API respeitando um limite de envio. Login por senha ou Azure AD, e auditoria de todas as ações.",
+      stack: ["Java 21", "Spring Boot 3.4", "RabbitMQ", "Microsoft Graph API", "Azure AD", "PostgreSQL", "Liquibase", "JWT", "Swagger", "Next.js", "Docker"],
+      arquitetura: ["Front Next.js", "API Spring Boot", "Fila RabbitMQ", "Microsoft Graph", "Cidades parceiras"],
+      destaques: [
+        "Participei desde a estrutura inicial do projeto",
+        "Fila no RabbitMQ para envio de e-mails em lote, com dead-letter queue",
+        "Migração do envio para a Microsoft Graph API, com envio em massa e anexos",
+        "Autenticação com JWT, refresh token e fluxo de senha temporária",
+        "Projeto em equipe; o código é da Prefeitura e não é público"
+      ],
+      fatos: [ { rotulo: "Contatos", valor: "1000+" }, { rotulo: "Rede", valor: "Mercocidades" }, { rotulo: "Antes", valor: "Disparo manual por planilha" }, { rotulo: "Equipe", valor: "3 devs" } ],
+      repo: null
+    },
     {
       id: "lab-url",
       titulo: "URL Shortener",
