@@ -252,11 +252,6 @@
     gsap.from('.display-title, .hero-bio, .hero .btn-nb', { y: 30, opacity: 0, stagger: .12, duration: .7, ease: 'power3.out' });
     gsap.from('.terminal-wrap', { x: 60, opacity: 0, duration: .9, delay: .3, ease: 'power3.out' });
     $$('.route-head').forEach(h => gsap.from(h, { x: -40, opacity: 0, duration: .6, scrollTrigger: { trigger: h, start: 'top 85%', once: true } }));
-    // parallax dos adesivos flutuantes com o mouse
-    addEventListener('mousemove', e => {
-      const x = (e.clientX / innerWidth - .5), y = (e.clientY / innerHeight - .5);
-      gsap.to('.floaty', { x: x * 26, y: y * 26, duration: .6, overwrite: 'auto' });
-    });
     // cursor
     const dot = $('.cursor-dot');
     addEventListener('mousemove', e => gsap.to(dot, { left: e.clientX, top: e.clientY, duration: .12 }));

@@ -102,7 +102,7 @@ h1,h2,h3,h4,h5{font-weight:700;letter-spacing:-.02em}
 .stat span{font-size:.75rem;line-height:1.2;display:block;margin-top:.3rem}
 
 /* terminal */
-.terminal-wrap{position:relative;padding:1.5rem}
+.terminal-wrap{position:relative;padding:0 .75rem .75rem 0}
 .terminal{background:var(--ink);color:var(--g);border:var(--bd);box-shadow:10px 10px 0 var(--g);font-family:'IBM Plex Mono',monospace;font-size:.85rem}
 .terminal-bar{display:flex;gap:6px;align-items:center;padding:.5rem .8rem;background:var(--white);border-bottom:var(--bd);color:var(--ink);font-size:.75rem}
 .terminal-bar i{width:12px;height:12px;border:2px solid var(--ink);border-radius:50%;background:var(--g)}
@@ -113,10 +113,6 @@ h1,h2,h3,h4,h5{font-weight:700;letter-spacing:-.02em}
 .terminal-out a{color:#fde047}
 .terminal-in{display:flex;gap:.5rem;padding:.6rem .8rem;border-top:2px dashed var(--g);margin:0}
 .terminal-in input{flex:1;background:transparent;border:0;outline:0;color:#fff;font:inherit}
-.floaty{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:.45rem;background:var(--white);border:var(--bd);box-shadow:var(--sh-sm);padding:.25rem .7rem .25rem .3rem;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.85rem;animation:float 4s ease-in-out infinite}
-.f1{top:-4px;left:0;animation-delay:0s}.f2{top:30px;right:-6px;animation-delay:-1s}
-.f3{bottom:20px;left:-10px;animation-delay:-2s}.f4{bottom:-6px;right:20px;animation-delay:-3s}
-@keyframes float{50%{transform:translateY(-12px) rotate(2deg)}}
 
 .marquee{margin-top:4rem;border-block:var(--bd);background:var(--g);overflow:hidden;transform:rotate(-1deg);margin-inline:-2vw}
 .marquee-in{display:flex;gap:2rem;width:max-content;padding:.5rem 0;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:1.1rem;animation:scroll 28s linear infinite}
@@ -215,10 +211,7 @@ main{overflow-x:clip}
   .route-btn{font-size:.82rem;padding:.3rem .65rem}
   .route-btn small{display:none}
 
-  /* adesivos viram uma linha de etiquetas acima do terminal, sem cobrir o conteúdo */
-  .terminal-wrap{padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
-  .floaty{position:static;animation:none;font-size:.8rem}
-  .terminal{flex-basis:100%;margin-top:.4rem;box-shadow:6px 6px 0 var(--g)}
+  .terminal{box-shadow:6px 6px 0 var(--g)}
   .terminal-out{height:200px}
   /* 16px evita o zoom automático do iOS ao focar o campo */
   .terminal-in input{font-size:16px}
